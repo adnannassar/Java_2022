@@ -3,15 +3,33 @@ package FirstLesson;
 import java.util.Scanner;
 
 public class Main {
+    static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        int numberOfLoops = getNumberOfLoops();
 
-        System.out.println("Enter nr1: ");
-        int nr1 = scanner.nextInt();
+        for (int i = 1; i <= numberOfLoops; i++) {
+            System.out.println("Loop: "  +i );
+            readTheNumbersFromUser();
+            System.out.println("...........................");
+        }
+    }
 
-        System.out.println("Enter nr2: ");
-        int nr2 = scanner.nextInt();
+    public static int getNumberOfLoops() {
+        System.out.println("Enter the number of loops");
+        return sc.nextInt();
+    }
 
-        System.out.println("Result  = " + (nr1 + nr2));
+    public static void readTheNumbersFromUser() {
+        System.out.println("Enter nr 1");
+        int nr1 = sc.nextInt();
+        System.out.println("Enter nr 2");
+        int nr2 = sc.nextInt();
+        add(nr1, nr2);
+    }
+
+    public static void add(int nr1, int nr2) {
+        int result = nr1 + nr2;
+        System.out.println("The result of " + nr1 + " + " + nr2 + " = " + result);
     }
 }
