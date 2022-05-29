@@ -1,6 +1,9 @@
 package Algorithmen;
 
 public class ArrayTools {
+    public static void main(String[] args) {
+        System.out.println(prime(1));
+    }
 
     public static int[][] reverseMatrix(int[][] matrix) {
         int erg[][] = new int[matrix[0].length][matrix.length];
@@ -57,7 +60,19 @@ public class ArrayTools {
 
     }
 
+    static int prime(int zahl) {
+        if (zahl == 1) {
 
+        }
+        int result = 1;  // wahr
+        int i;
+        i = 2;
+        while (i < zahl) {
 
-
+            if (zahl % i == 0)   // kein prim zahlen
+                result = 0;
+            i++;
+        }
+        return result;
+    }
 }
