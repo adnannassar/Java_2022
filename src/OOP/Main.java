@@ -1,7 +1,5 @@
 package OOP;
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         Mitarbeiter mitarbeiter1 = new Mitarbeiter("Jasem", 25, 5000.00, false);
