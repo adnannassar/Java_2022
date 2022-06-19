@@ -9,6 +9,5 @@ public class Main {
         System.out.println(p.printInfo());
         System.out.println(hr1.printInfo());
         System.out.println(mitarbeiter.printInfo());
-
     }
 }
