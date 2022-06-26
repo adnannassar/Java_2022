@@ -20,4 +20,14 @@ public class Arzt extends Mitglied {
     public double berechneJahresGehalt() {
         return 12 * 10000.00;
     }
+
+    @Override
+    public String getSonstiges() {
+        return "Fachrichtung: " + fachrichtung;
+    }
+
+    @Override
+    public String toString() {
+        return "Type: A\n" + super.toString() + "\nJahresgehalt: " + berechneJahresGehalt()+ "\nSonstiges: "+ getSonstiges();
+    }
 }

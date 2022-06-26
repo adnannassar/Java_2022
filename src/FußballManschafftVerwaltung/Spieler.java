@@ -15,4 +15,14 @@ public class Spieler extends Mitglied {
     public double berechneJahresGehalt() {
         return 12 * 180000.00 + (5000.00 * anzahlSpieleProSession);
     }
+
+    @Override
+    public String getSonstiges() {
+        return "Position: " + spielPosition + " / Spieleinsätze: " + anzahlSpieleProSession;
+    }
+
+    @Override
+    public String toString() {
+        return "Type: S\n" + super.toString() + "\nJahresgehalt: " + berechneJahresGehalt()+ "\nSonstiges: "+ getSonstiges();
+    }
 }
