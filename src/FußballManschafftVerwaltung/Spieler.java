@@ -1,6 +1,6 @@
 package FußballManschafftVerwaltung;
 
-public class Spieler extends Mitglied {
+public class Spieler extends Mitglied implements PressMeeting {
     private String spielPosition;
     private int anzahlSpieleProSession;
 
@@ -9,6 +9,7 @@ public class Spieler extends Mitglied {
         super(name, vorname);
         this.spielPosition = spielPosition;
         this.anzahlSpieleProSession = anzahlSpieleProSession;
+
     }
 
     @Override
@@ -23,6 +24,11 @@ public class Spieler extends Mitglied {
 
     @Override
     public String toString() {
-        return "Type: S\n" + super.toString() + "\nJahresgehalt: " + berechneJahresGehalt()+ "\nSonstiges: "+ getSonstiges();
+        return "Type: S\n" + super.toString() + "\nJahresgehalt: " + berechneJahresGehalt() + "\nSonstiges: " + getSonstiges();
+    }
+
+    @Override
+    public void pressMeeting() {
+        System.out.println("Ich bin ein Spieler");
     }
 }

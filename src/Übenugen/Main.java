@@ -1,4 +1,4 @@
-package Aufgabe_1;
+package Übenugen;
 
 import java.util.Scanner;
 

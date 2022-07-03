@@ -8,6 +8,7 @@ public class Arzt extends Mitglied {
         this.fachrichtung = fachrichtung;
     }
 
+
     public String getFachrichtung() {
         return fachrichtung;
     }
@@ -15,6 +16,7 @@ public class Arzt extends Mitglied {
     public void setFachrichtung(String fachrichtung) {
         this.fachrichtung = fachrichtung;
     }
+
 
     @Override
     public double berechneJahresGehalt() {
@@ -28,6 +30,6 @@ public class Arzt extends Mitglied {
 
     @Override
     public String toString() {
-        return "Type: A\n" + super.toString() + "\nJahresgehalt: " + berechneJahresGehalt()+ "\nSonstiges: "+ getSonstiges();
+        return "Type: A\n" + super.toString() + "\nJahresgehalt: " + berechneJahresGehalt() + "\nSonstiges: " + getSonstiges();
     }
 }

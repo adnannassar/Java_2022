@@ -15,6 +15,7 @@ public class Main {
 
 
         Mannschaft bvb = new Mannschaft("Ball-Verein Borussia Dortmund 09 BVB", 30);
+
         // Mock daten
         bvb.addMitglied(mario);
         bvb.addMitglied(pierre);

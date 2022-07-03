@@ -1,6 +1,6 @@
 package FußballManschafftVerwaltung;
 
-public class Trainer extends Mitglied {
+public class Trainer extends Mitglied implements PressMeeting{
     private Spieler lieblingsSpieler;
 
     public Trainer(String name, String vorname) {
@@ -29,5 +29,10 @@ public class Trainer extends Mitglied {
     @Override
     public String toString() {
         return "Type: T\n" + super.toString() + "\nJahresgehalt: " + berechneJahresGehalt() + "\nSonstiges: " + getSonstiges();
+    }
+
+    @Override
+    public void pressMeeting() {
+
     }
 }

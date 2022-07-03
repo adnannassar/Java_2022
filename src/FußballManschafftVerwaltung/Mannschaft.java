@@ -102,14 +102,46 @@ public class Mannschaft {
 
         System.out.print("Name: ");
         String name = sc.next();
-
-        System.out.print("Hat " + name + " einen lieblings Spieler?\n (J)a\n (N)ein\nIhre Eingabe: ");
-        char option = sc.next().charAt(0);
-        switch (option) {
-            case 'J':
-                // list alle spieler
+        int id = 0;
+        if (playerExist()) {
+            System.out.print("Hat " + name + " einen lieblings Spieler?\n (J)a\n (N)ein\nIhre Eingabe: ");
+            char option = sc.next().charAt(0);
+            switch (option) {
+                case 'J':
+                    listAllPlayers();
+                    System.out.print("Ihre Eingabe: ");
+                    id = sc.nextInt();
+                case 'N':
+                    break;
+            }
         }
-        addMitglied(new Trainer(name, vorname));
+        Trainer newTrainer = new Trainer(name, vorname);
+        // id
+        newTrainer.setLieblingsSpieler((Spieler) getPlayerById(id));
+        addMitglied(newTrainer);
+
+    }
+
+    private Mitglied getPlayerById(int id) {
+        if (id == 0) {
+            return null;
+        } else {
+            for (int i = 0; i < mitglieder.length; i++) {
+                if (mitglieder[i].getId() == id) {
+                    return mitglieder[i];
+                }
+            }
+        }
+        return null;
+    }
+
+    private boolean playerExist() {
+        for (int i = 0; i < mitglieder.length; i++) {
+            if (getTypeOfMitglied(mitglieder[i]) == 'S') {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void addSpieler() {
@@ -150,5 +182,16 @@ public class Mannschaft {
                 summe += mitglieder[i].berechneJahresGehalt();
         }
         return summe;
+    }
+
+    private void listAllPlayers() {
+        System.out.println("Bitte einen Spieler, durch die Eingabe von ID als lieblingsspieler merken");
+        System.out.printf("\t%-10s%-10s%-25s%-25s%-25s%-30s\n", "ID", "Type", "Name", "Vorname", "Jahresgehalt", "Sonstiges");
+
+        for (int i = 0; i < mitglieder.length; i++) {
+            if (getTypeOfMitglied(mitglieder[i]) == 'S') {
+                System.out.printf("\t%-10d%-10c%-25s%-25s%-25.2f%-30s\n", mitglieder[i].getId(), getTypeOfMitglied(mitglieder[i]), mitglieder[i].getName(), mitglieder[i].getVorname(), mitglieder[i].berechneJahresGehalt(), mitglieder[i].getSonstiges());
+            }
+        }
     }
 }
